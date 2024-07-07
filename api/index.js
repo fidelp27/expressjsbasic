@@ -2,10 +2,12 @@ import express, { json } from 'express';
 import routerApi from './routes/index.js';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import process from 'process';
 import { errorHandler, logErrors } from './middelewares/errorHandler.js';
 import { notFoundHandler } from './middelewares/notFound.js';
 const app = express();
-const port = 3000;
+
+const port = process.env.PORT || 3000;
 
 // cors
 const corsOptions ={
@@ -20,7 +22,7 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json());
 
 // Ruta principal de la aplicación
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello World!');
 });
 
