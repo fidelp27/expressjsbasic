@@ -1,7 +1,7 @@
 import ProductService from "../services/productServices.js";
 
 const service = new ProductService();
-
+console.log("new test")
 export const getProducts = async (req, res, next) => {
   if(res.statusCode == 200){
   res.json(service)
