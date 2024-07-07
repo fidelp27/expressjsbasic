@@ -3,6 +3,8 @@ const router = Router();
 import { createProduct, deleteProduct, getProductById, getProducts, updateProduct, updateProductTotally } from '../controllers/productController.js';
 import { validation, validationProduct } from '../middelewares/validationProduct.js';
 
+// Log para verificar que las rutas de productos están siendo cargadas
+console.log('Cargando rutas de productos');
 
 
 // Ruta para obtener todos los productos
