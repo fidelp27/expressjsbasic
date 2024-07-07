@@ -10,14 +10,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // cors
-const corsOptions ={
-  origin: process.env.CORS_ORIGIN || '*',
-  credentials:true,  //access-control-allow-credentials:true
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  optionSuccessStatus:200
 
-}
-app.use(cors(corsOptions))
+app.use(cors())
 // Middleware para parsear JSON
 app.use(bodyParser.json());
 
